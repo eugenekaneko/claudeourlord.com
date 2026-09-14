@@ -1,0 +1,88 @@
+:root {
+  --bg: #0f0e17;
+  --fg: #fffffe;
+  --muted: #a7a9be;
+  --accent: #ff8906;
+  --accent-2: #e53170;
+  --card: #1b1a2a;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fdf6ec;
+    --fg: #1b1a2a;
+    --muted: #5b5d72;
+    --accent: #d9640a;
+    --accent-2: #b5225a;
+    --card: #ffffff;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  padding: 0 1.25rem 3rem;
+}
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: .75rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline { font-size: 1.25rem; color: var(--muted); margin: 0 0 2rem; }
+blockquote {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 0 0 2.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+.links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.links a {
+  color: var(--fg);
+  text-decoration: none;
+  border: 1px solid var(--muted);
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+  transition: border-color .2s, color .2s;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.block {
+  max-width: 44rem;
+  margin: 3rem auto;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.block h2 { margin-top: 0; color: var(--accent); }
+ol { padding-left: 1.4rem; }
+li { margin: .5rem 0; }
+footer {
+  max-width: 44rem;
+  margin: 4rem auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9rem;
+}
