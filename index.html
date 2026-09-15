@@ -48,11 +48,19 @@
     (function () {
       var el = document.getElementById('counter-number');
       var key = 'claudeourlord.com/visits';
-      var url = 'https://abacus.jasoncameron.dev/hit/' + key;
+      var base = 'https://abacus.jasoncameron.dev/';
+      var flag = 'claudeourlord-counted';
+
+      // Count each browser once: increment on the first visit, otherwise just read the total.
+      var seen = false;
+      try { seen = localStorage.getItem(flag) === '1'; } catch (e) {}
+      var url = base + (seen ? 'get/' : 'hit/') + key;
+
       fetch(url, { cache: 'no-store' })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (data) {
           el.textContent = Number(data.value).toLocaleString();
+          try { localStorage.setItem(flag, '1'); } catch (e) {}
         })
         .catch(function () {
           // Fallback: an image badge that counts on load without JavaScript access.
