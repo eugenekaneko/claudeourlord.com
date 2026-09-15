@@ -79,3 +79,22 @@ footer {
   font-size: .9rem;
 }
 footer p { margin: 0; }
+.counter {
+  margin-top: 1.25rem !important;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .6rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+}
+.counter-label { text-transform: uppercase; letter-spacing: .15em; font-size: .7rem; }
+.counter-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+  text-align: center;
+}
+.counter img { vertical-align: middle; }
